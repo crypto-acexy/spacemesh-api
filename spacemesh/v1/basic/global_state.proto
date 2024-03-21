@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "spacemesh/v1/baisc/global_state_types.proto";
+
+package spacemesh.v1;
+
+// Readonly global state data - current and historical.
+// Global state data is data which is not explicitly stored in the mesh.
+// Global state is modified only by the state transition function.
+service GlobalStateService {
+
+    // Account info in the current global state.
+    rpc Account(AccountRequest) returns (AccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/globalstate/account"
+            body: "*"
+        };
+    }
+
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "spacemesh/v1/baisc/mesh_types.proto";
+
+package spacemesh.v1;
+
+// Readonly API for basic mesh info
+service MeshService {
+
+    // Genesis ID
+    rpc GenesisID(GenesisIDRequest) returns (GenesisIDResponse) {
+        option (google.api.http) = {
+            post: "/v1/mesh/genesisid"
+            body: "*"
+        };
+    }
+
+}
