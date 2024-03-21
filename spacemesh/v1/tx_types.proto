@@ -41,7 +41,7 @@ message TransactionsStateStreamResponse {
 // TransactionState is the "journey" of a tx from mempool to block inclusion to
 // mesh to STF processing. To know whether or not the tx actually succeeded,
 // and its side effects, check the Receipt in the GlobalStateService.
-message TransactionState {
+message TransactionStateEnum {
     TransactionId id = 1;
     enum TransactionState {
         TRANSACTION_STATE_UNSPECIFIED = 0; // default state
@@ -52,7 +52,7 @@ message TransactionState {
         TRANSACTION_STATE_MESH = 5; // submitted to the mesh
         TRANSACTION_STATE_PROCESSED = 6; // processed by STF; check Receipt for success or failure
     }
-    TransactionState state = 2;
+    TransactionStateEnum state = 2;
 }
 
 // TransactionResultsRequest request object for results stream.
