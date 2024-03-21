@@ -15,7 +15,7 @@ message SubmitTransactionRequest {
 
 message SubmitTransactionResponse {
     google.rpc.Status status = 1;
-    TransactionState txstate = 2;
+    TransactionStateEnum txstate = 2;
 }
 
 message TransactionsStateRequest {
@@ -24,7 +24,7 @@ message TransactionsStateRequest {
 }
 
 message TransactionsStateResponse {
-    repeated TransactionState transactions_state = 1;
+    repeated TransactionStateEnum transactions_state = 1;
     repeated Transaction transactions = 2;
 }
 
@@ -34,7 +34,7 @@ message TransactionsStateStreamRequest {
 }
 
 message TransactionsStateStreamResponse {
-    TransactionState transaction_state = 1;
+    TransactionStateEnum transaction_state = 1;
     Transaction transaction = 2;
 }
 
