@@ -1,3 +1,7 @@
 .idea
 bin/
 .DS_Store
+
+target
+*.class
+
